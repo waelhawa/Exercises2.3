@@ -10,8 +10,8 @@ namespace Exercise2._3
             string text;
             while (checker)
                 {
-                text = textInput();
-                var array = letterSifter(text);
+                text = TextInput();
+                var array = LetterSifter(text);
                 Console.WriteLine($"The number of vowels is {array.Item1}, The number of consonants is {array.Item2}, The phrase without the vowels is {array.Item3}");
                 checker = ContinueEntry();
 
@@ -19,7 +19,7 @@ namespace Exercise2._3
             Console.WriteLine("Thank you, Goodbye!");
             }
 
-        public static string textInput ()
+        public static string TextInput ()
             {
             string text;
             Console.Write("Enter some text: ");
@@ -73,7 +73,7 @@ namespace Exercise2._3
                 }
             }
 
-            public static (int, int, string) letterSifter (string text)
+            public static (int, int, string) LetterSifter (string text)
             {
             int vowelCount = 0;
             int consonantCount = 0;
