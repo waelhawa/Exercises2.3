@@ -12,7 +12,7 @@ namespace Exercise2._3
                 {
                 text = TextInput();
                 var array = LetterSifter(text);
-                Console.WriteLine($"The number of vowels is {array.Item1}, The number of consonants is {array.Item2}, The phrase without the vowels is {array.Item3}");
+                Console.WriteLine($"The number of vowels is\t\t\t\t{array.Item1}\nThe number of consonants is\t\t\t{array.Item2}\nThe phrase without the vowels is\t\t{array.Item3}");
                 checker = ContinueEntry();
 
                 }
@@ -33,7 +33,7 @@ namespace Exercise2._3
             string invalidText = "";
             foreach (char letter in text.ToCharArray())
                 {
-                if (Char.IsLetter(letter))
+                if (Char.IsLetter(letter) || letter == ' ')
                     {
                     newText += letter;
                     }
@@ -42,7 +42,10 @@ namespace Exercise2._3
                     invalidText += letter;
                     }
                 }
-            Console.WriteLine($"Invalid text is {invalidText}");
+            if (!string.IsNullOrEmpty(invalidText))
+            {
+                Console.WriteLine($"Invalid text is\t\t\t\t\t{invalidText}");
+            }
             return newText;
             }
 
@@ -59,12 +62,12 @@ namespace Exercise2._3
                     case "y":
                     case "yes":
                         return true;
-                        break;
+                        
 
                     case "n":
                     case "no":
                         return false;
-                        break;
+                        
 
                     default:
                         Console.WriteLine("Invalid Entry.");
